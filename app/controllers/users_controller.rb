@@ -25,6 +25,10 @@ class UsersController < ApplicationController
         redirect_to users_path
     end
 
+    def gender
+        @gender = User.find_by(user.gender)
+    end
+
     private 
 
     def user_params
