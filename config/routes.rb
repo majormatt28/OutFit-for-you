@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :outfit_clothings
+  resources :outfits
   resources :clothings
   resources :closets
   resources :users
