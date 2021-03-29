@@ -1,0 +1,12 @@
+<h1>New User</h1>
+
+<%form_for @user.each do |f|%>
+<%= f.label "Name: "%>
+<%= f.text_field :name%>
+<br>
+<%= f.label "Profile Pic: "%>
+<%= f.text_field :img_url%>
+<br>
+
+<%f.submit%>
+<%end%>
