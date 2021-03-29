@@ -14,7 +14,15 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
 
-        redirect_to user_path(user)
+        redirect_to user_path(@user)
+    end
+
+    def destroy
+        @user = User.find(params[:id])
+
+        @user.delete
+
+        redirect_to users_path
     end
 
     private 
