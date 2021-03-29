@@ -14,20 +14,20 @@ User.destroy_all
 Outfit.destroy_all
 Clothing.destroy_all
 
-User.create(name: "Radiyah", gender: "f", img_url: )
-User.create(name: "Mathew", gender: "m", img_url: )
+User.create(name: "Radiyah", gender: "f", img_url:" ")
+User.create(name: "Mathew", gender: "m", img_url:" ")
 
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url: , description: Faker::Restaurant.description, category: "Shirts", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Shirt", gender: Faker::Gender.short_binary_type)
 end
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url: , description: Faker::Restaurant.description, category: "Pants", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Pant", gender: Faker::Gender.short_binary_type)
 end
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url: , description: Faker::Restaurant.description, category: "Shoes", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Shoe", gender: Faker::Gender.short_binary_type)
 end
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url: , description: Faker::Restaurant.description, category: "Accessories", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Accessory", gender: Faker::Gender.short_binary_type)
 end
 
 
@@ -55,13 +55,17 @@ end
 # Clothing.create(name: , img_url: , description: , category: "Accessories", gender: "")
 # Clothing.create(name: , img_url: , description: , category: "Accessories", gender: "")
 
-Closet.create(user_id: User.all.sample.id, clothing_id: Clothing.all.sample.id)
+5.times do
+    Closet.create(user_id: User.all.sample.id, clothing_id: Clothing.all.sample.id)
+end
 
+5.times do 
+    Outfit.create(name: Faker::Artist.name, user_id: User.all.sample.id)
+end
 
-Outfit.create(name: , user_id: User.all.sample.id)
-
-
-OutfitClothing.create(outfit_id: Outfit.all.sample.id, clothing_id: Clothing.all.sample.id)
+5.times do 
+    OutfitClothing.create(outfit_id: Outfit.all.sample.id, clothing_id: Clothing.all.sample.id)
+end
 
 
 puts "Seeded Successfully"
