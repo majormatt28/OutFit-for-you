@@ -35,4 +35,8 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :img_url, :gender)
     end
 
+    def gender
+        
+    end
+
 end

@@ -2,6 +2,10 @@
 
 <%= @outfit.name %>
 <br>
-<%= @outfit.outfit_clothings.map{|outfit| outfit.clothing.img_url} %>
+<% @outfit.outfit_clothings.map do |outfit| %>
+    <%= outfit.clothing.img_url %>
+<% end %>
 <br>
 <%= link_to "Main Page", outfits_path %>
+
+<p><%= button_to "Delete This Fit?", outfit_path(@outfit), method: :delete %></p>
