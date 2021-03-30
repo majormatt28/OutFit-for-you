@@ -1,7 +1,9 @@
 <h1>User Show Page</h1>
 
-<img src="<%= @user.img_url %>" alt="<%= @user.name %>">
-<br>
+<% if @user.avatar.attached? %>
+  <img src="<%= (url_for(@user.avatar)) %>" alt="<%= @user.name %>" width="500" height="400">
+<% end %>
+  <br>
 <h2><%= @user.name%></h2>
 <br>
 <h3><%= @user.gender.upcase%></h3>
