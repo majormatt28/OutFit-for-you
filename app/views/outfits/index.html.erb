@@ -1,0 +1,5 @@
+<h1>Outfit Index Page</h1>
+
+<% @outfits.each do |outfit|%>
+<li><%= link_to outfit.name, outfit_path(outfit)%>
+<% end %>

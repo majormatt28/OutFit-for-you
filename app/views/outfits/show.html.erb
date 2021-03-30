@@ -1,0 +1,7 @@
+<h1>Outfit Show Page</h1>
+
+<%= @outfit.name %>
+<br>
+<%= @outfit.outfit_clothings.map{|outfit| outfit.clothing.img_url} %>
+<br>
+<%= link_to "Main Page", outfits_path %>
