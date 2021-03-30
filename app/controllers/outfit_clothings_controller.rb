@@ -3,7 +3,7 @@ class OutfitClothingsController < ApplicationController
         @outfit_clothing = OutfitClothing.new
 
         @outfits = Outfit.all
-        @clothings = Clothing.all
+        @clothing = Clothing.all
 
         @shirts = shirts
         @pants = pants
@@ -12,11 +12,11 @@ class OutfitClothingsController < ApplicationController
     end
 
     def create
-        @outfit_clothing = OutfitClothing.find(params[:id])
+        # @outfit_clothing = OutfitClothing.find(params[:id])
 
-        @outfit_clothing.create(outfit_clothing_params)
+        @outfit_clothing = OutfitClothing.create(outfit_clothing_params)
 
-        redirect_to new_outfit_clothing_path
+        redirect_to outfit_clothing_path(outfit_clothing)
     end
 
     private

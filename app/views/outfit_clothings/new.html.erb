@@ -1,7 +1,13 @@
-<h1>New Outfit Clothings</h1>
+<h1>Pick Your Piece(s)</h1>
 
 <%= form_for @outfit_clothing do |f| %>
     <p><strong><%= f.label "Choose a Top: " %>
-    <%= f.collection_select :clothing_id, @clothings, :id, :name %></p>
+    <%= f.collection_select :clothing_id, @shirts, :id, :name %></p>
+    <p><strong><%= f.label "Choose a Bottom: " %>
+    <%= f.collection_select :clothing_id, @pants, :id, :name %></p>
+    <p><strong><%= f.label "Choose an Accessory: " %>
+    <%= f.collection_select :clothing_id, @accessories, :id, :name %></p>
+    <p><strong><%= f.label "Choose a Shoe: " %>
+    <%= f.collection_select :clothing_id, @shoes, :id, :name %></p>
     <%= f.submit %>
 <% end %>

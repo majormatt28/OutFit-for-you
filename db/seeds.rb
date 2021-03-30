@@ -18,16 +18,16 @@ User.create(name: "Radiyah", gender: "f", img_url: "https://ca.slack-edge.com/T0
 User.create(name: "Mathew", gender: "m", img_url: "https://ca.slack-edge.com/T02MD9XTF-U01NN9ERSNM-3db34d69031b-512")
 
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Shirt", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url: Faker::LoremFlickr.image(size: "50x60"), description: Faker::Restaurant.description, category: "Shirt", gender: Faker::Gender.short_binary_type)
 end
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Pant", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url: Faker::LoremFlickr.image(size: "50x60"), description: Faker::Restaurant.description, category: "Pant", gender: Faker::Gender.short_binary_type)
 end
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Shoe", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url: Faker::LoremFlickr.image(size: "50x60"), description: Faker::Restaurant.description, category: "Shoe", gender: Faker::Gender.short_binary_type)
 end
 5.times do 
-    Clothing.create(name: Faker::Superhero.name, img_url:" ", description: Faker::Restaurant.description, category: "Accessory", gender: Faker::Gender.short_binary_type)
+    Clothing.create(name: Faker::Superhero.name, img_url: Faker::LoremFlickr.image(size: "50x60"), description: Faker::Restaurant.description, category: "Accessory", gender: Faker::Gender.short_binary_type)
 end
 
 

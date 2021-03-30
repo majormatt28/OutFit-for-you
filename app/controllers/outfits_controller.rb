@@ -10,10 +10,10 @@ class OutfitsController < ApplicationController
 
     def new
         @outfit = Outfit.new
-        @shirts = shirts
-        @pants = pants
-        @accessories = accessories
-        @shoes = shoes
+        # @shirts = shirts
+        # @pants = pants
+        # @accessories = accessories
+        # @shoes = shoes
     end 
 
     def create
@@ -24,11 +24,11 @@ class OutfitsController < ApplicationController
 
     def edit
         @outfit = Outfit.find(params[:id])
-        @shirts = shirts
-        @pants = pants
-        @accessories = accessories
-        @shoes = shoes
-        byebug
+        # @shirts = shirts
+        # @pants = pants
+        # @accessories = accessories
+        # @shoes = shoes
+        # byebug
     end
 
     def update
