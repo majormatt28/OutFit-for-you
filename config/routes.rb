@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :outfit_clothings
+  resources :outfit_clothings, only: [:create]
+  get "/outfit_clothings/:outfit_id/new", to: "outfit_clothings#new", as: "new_outfit_clothing"
+  
   resources :outfits
   resources :clothings, only: [:show, :index]
   resources :closets, only: [:index]

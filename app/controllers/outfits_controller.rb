@@ -10,25 +10,16 @@ class OutfitsController < ApplicationController
 
     def new
         @outfit = Outfit.new
-        # @shirts = shirts
-        # @pants = pants
-        # @accessories = accessories
-        # @shoes = shoes
     end 
 
     def create
         @outfit = Outfit.create(outfit_params)
-    
-        redirect_to outfits_path(@outfit.id)
+        
+        redirect_to outfit_path(@outfit.id)
     end
 
     def edit
         @outfit = Outfit.find(params[:id])
-        # @shirts = shirts
-        # @pants = pants
-        # @accessories = accessories
-        # @shoes = shoes
-        # byebug
     end
 
     def update
@@ -39,34 +30,18 @@ class OutfitsController < ApplicationController
         redirect_to outfit_path(@outfit)
     end
 
+    def destroy 
+        @outfit = Outfit.find(params[:id])
+
+        @outfit.delete
+
+        redirect_to outfits_path
+    end
+
 
     private
 
     def outfit_params
-        params.require(:outfit).permit(:name, :clothing_ids, :shirts_id, :pants_id, :shoes_id, :accessories_id)
-    end
-
-    def shirts
-        Clothing.select do |clothing| 
-            clothing.category == "Shirt"
-        end
-    end
-
-    def pants
-        Clothing.select do |clothing| 
-            clothing.category == "Pant"
-        end
-    end
-
-    def accessories
-        Clothing.select do |clothing| 
-            clothing.category == "Accessory"
-        end
-    end
-
-    def shoes
-        Clothing.select do |clothing| 
-            clothing.category == "Shoe"
-        end
+        params.require(:outfit).permit(:name, :user_id)
     end
 end

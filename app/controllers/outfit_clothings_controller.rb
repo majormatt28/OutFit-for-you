@@ -2,7 +2,7 @@ class OutfitClothingsController < ApplicationController
     def new
         @outfit_clothing = OutfitClothing.new
 
-        @outfits = Outfit.all
+        @outfit = Outfit.find(params[:outfit_id])
         @clothing = Clothing.all
 
         @shirts = shirts
@@ -14,16 +14,21 @@ class OutfitClothingsController < ApplicationController
     def create
         # @outfit_clothing = OutfitClothing.find(params[:id])
 
-        @outfit_clothing = OutfitClothing.create(outfit_clothing_params)
+        # @outfit = Outfit.find(params[:outfit_id])
 
-        redirect_to outfit_clothing_path(outfit_clothing)
+        params[:outfit_clothing].each do |clothing_hash| 
+           OutfitClothing.create(clothing_id: clothing_hash[:clothing_id], outfit_id: params[:outfit_id])
+        end 
+        
+    
+        redirect_to outfit_path(params[:outfit_id])
     end
 
     private
 
-    def outfit_clothing_params
-        params.require(:outfit_clothing).permit(:outfit_id, :clothing_id)
-    end
+    # def outfit_clothing_params
+    #     params.require(:outfit_clothing).permit(:outfit_id, :clothing_id)
+    # end
 
     def shirts
         Clothing.select do |clothing| 

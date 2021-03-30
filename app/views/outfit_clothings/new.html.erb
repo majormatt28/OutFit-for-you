@@ -1,13 +1,15 @@
 <h1>Pick Your Piece(s)</h1>
 
-<%= form_for @outfit_clothing do |f| %>
-    <p><strong><%= f.label "Choose a Top: " %>
-    <%= f.collection_select :clothing_id, @shirts, :id, :name %></p>
-    <p><strong><%= f.label "Choose a Bottom: " %>
-    <%= f.collection_select :clothing_id, @pants, :id, :name %></p>
-    <p><strong><%= f.label "Choose an Accessory: " %>
-    <%= f.collection_select :clothing_id, @accessories, :id, :name %></p>
-    <p><strong><%= f.label "Choose a Shoe: " %>
-    <%= f.collection_select :clothing_id, @shoes, :id, :name %></p>
-    <%= f.submit %>
+<%= form_tag "/outfit_clothings" do %>
+    <%= hidden_field_tag :outfit_id, @outfit.id %>
+    <p><strong><%= label_tag "Choose a Top: " %>
+    <%= collection_select "outfit_clothing[]", :clothing_id, @shirts, :id, :name %></p>
+    <p><strong><%= label_tag "Choose a Bottom: " %>
+    <%= collection_select "outfit_clothing[]", :clothing_id, @pants, :id, :name %></p>
+    <p><strong><%= label_tag "Choose an Accessory: " %>
+    <%= collection_select "outfit_clothing[]", :clothing_id, @accessories, :id, :name %></p>
+    <p><strong><%= label_tag "Choose a Shoe: " %>
+    <%= collection_select "outfit_clothing[]", :clothing_id, @shoes, :id, :name %></p>
+    <%= submit_tag "Add to Outfit" %>
 <% end %>
+

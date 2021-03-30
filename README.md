@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...hope this helps
+
+
+Credits:
+https://medium.com/@anaharris/how-to-add-image-upload-functionality-to-your-rails-app-9f7fc3f3d042
+
+Greg Triple OG Dwyer
