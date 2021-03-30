@@ -28,11 +28,12 @@ class OutfitsController < ApplicationController
         @pants = pants
         @accessories = accessories
         @shoes = shoes
+        byebug
     end
 
     def update
         @outfit = Outfit.find(params[:id])
-
+        #byebug
         @outfit.update(outfit_params)
 
         redirect_to outfit_path(@outfit)
