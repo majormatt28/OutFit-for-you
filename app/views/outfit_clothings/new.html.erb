@@ -1,0 +1,7 @@
+<h1>New Outfit Clothings</h1>
+
+<%= form_for @outfit_clothing do |f| %>
+    <p><strong><%= f.label "Choose a Top: " %>
+    <%= f.collection_select :clothing_id, @outfit_clothing, :id, :name %></p>
+    <%= f.submit %>
+<% end %>

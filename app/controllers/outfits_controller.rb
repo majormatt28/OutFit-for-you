@@ -22,10 +22,27 @@ class OutfitsController < ApplicationController
         redirect_to outfits_path(@outfit.id)
     end
 
+    def edit
+        @outfit = Outfit.find(params[:id])
+        @shirts = shirts
+        @pants = pants
+        @accessories = accessories
+        @shoes = shoes
+    end
+
+    def update
+        @outfit = Outfit.find(params[:id])
+
+        @outfit.update(outfit_params)
+
+        redirect_to outfit_path(@outfit)
+    end
+
+
     private
 
     def outfit_params
-        params.require(:outfit).permit(:name)
+        params.require(:outfit).permit(:name, :clothing_ids, :shirts_id, :pants_id, :shoes_id, :accessories_id)
     end
 
     def shirts
