@@ -1,5 +1,9 @@
 <h1>User Show Page</h1>
 
+<% if flash[:messages]%>
+    <%= flash[:messages] %>
+<% end %>
+
 <% if @user.avatar.attached? %>
   <img src="<%= (url_for(@user.avatar)) %>" alt="<%= @user.name %>" width="500" height="400">
 <% end %>

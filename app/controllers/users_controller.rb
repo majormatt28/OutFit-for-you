@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         if @current_user == @user 
             render :show
           else  
-            flash[:message] = "You can only see your own profile"
+            flash.now[:messages] = "You can only see your own profile"
             redirect_to users_path
         end
     end
@@ -22,13 +22,14 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        @user = User.new(user_params)
 
         if @user.valid?
+            @user.save
             cookies[:user_id] = @user.id
             redirect_to @user
           else
-            flash[:errors] = flash.errors.full_messages
+            flash.now[:messages] = @user.errors.full_messages[0]
             redirect_to new_user_path
         end 
     end
