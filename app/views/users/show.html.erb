@@ -14,9 +14,11 @@
 
 <h3>My Outfits</h3>
     <% @user.outfits.each do |outfit| %>
-      <p><%= outfit.name %></p>
+      <p><%= link_to outfit.name, outfits_path(@outfit) %></p>
       <hr>
     <% end %>
 
-<%= button_to "Delete User Profile?", user_path(@user), method: :delete %>
-<%= link_to "Main Page", users_path %>
+
+<p><%= link_to "Closet", closets_path %></p>
+<p><%= link_to "Main Page", users_path %></p>
+<p><%= button_to "Delete User Profile?", user_path(@user), method: :delete %></p>

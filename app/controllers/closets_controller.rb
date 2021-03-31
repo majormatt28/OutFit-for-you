@@ -1,6 +1,7 @@
 class ClosetsController < ApplicationController
     def index
         @closets = Closet.all
+        byebug
     end
 
     def show
