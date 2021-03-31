@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     def login
         # find a user based on email
         user = User.find_by(email: params[:session][:email])
-
+        # byebug
     #validate that user based on their password
         if user && user.authenticate(params[:session][:password])
       #set a cookie 

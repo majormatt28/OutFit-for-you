@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -17,7 +17,7 @@
 
       <% if @current_user %>
         <%= link_to "Welcome #{@current_user.name}!", @current_user  %>
-        <%= link_to "Logout", logout_path, method: :delete  %>
+        <%= button_to "Logout", logout_path, method: :delete  %>
       <% else %>
         <%= link_to 'Signup', new_user_path %>
         <%= link_to 'Login', new_login_path %>

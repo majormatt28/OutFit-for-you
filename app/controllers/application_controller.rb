@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in_user
+        # byebug
         @current_user = User.find_by(id: cookies[:user_id])
     end
 end

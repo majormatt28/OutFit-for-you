@@ -22,10 +22,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-
+        @user = User.create(user_params)
+        # byebug
         if @user.valid?
-            @user.save
             cookies[:user_id] = @user.id
             redirect_to @user
           else

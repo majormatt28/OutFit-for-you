@@ -14,8 +14,8 @@ User.destroy_all
 Outfit.destroy_all
 Clothing.destroy_all
 
-User.create(name: "Radiyah", gender: "f", img_url: "https://ca.slack-edge.com/T02MD9XTF-U01MS0E5UGM-b6e1d5ff3843-512")
-User.create(name: "Mathew", gender: "m", img_url: "https://ca.slack-edge.com/T02MD9XTF-U01NN9ERSNM-3db34d69031b-512")
+User.create(name: "Radiyah", gender: "f", img_url: "https://ca.slack-edge.com/T02MD9XTF-U01MS0E5UGM-b6e1d5ff3843-512", email: "r@r.com", password: "abc123")
+User.create(name: "Mathew", gender: "m", img_url: "https://ca.slack-edge.com/T02MD9XTF-U01NN9ERSNM-3db34d69031b-512", email: "m@m.com", password: "abc123")
 
 5.times do 
     Clothing.create(name: Faker::Superhero.name, img_url: Faker::LoremFlickr.image(size: "50x60"), description: Faker::Restaurant.description, category: "Shirt", gender: Faker::Gender.short_binary_type)
