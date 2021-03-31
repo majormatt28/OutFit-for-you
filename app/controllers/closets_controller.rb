@@ -3,8 +3,8 @@ class ClosetsController < ApplicationController
         @closets = Closet.all
     end
 
-    # def show
-    #     #byebug
-    #     @closet = Closet.find(params[:id])
-    # end
+    def show
+        # byebug
+        # @closet = Closet.find(params[:id])
+    end
 end

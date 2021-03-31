@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :logged_in?, only: [:index, :new, :create]
 
-    if @current_user == @user
-        render :show
-    else
-        redirect_to users_path
-    end
     
     def index
         @users = User.all
@@ -13,7 +8,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-
+        # byebug
         if @current_user == @user 
             render :show
           else  
@@ -29,7 +24,13 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
 
-        redirect_to user_path(@user)
+        if @user.valid?
+            cookies[:user_id] = @user.id
+            redirect_to @user
+          else
+            flash[:errors] = flash.errors.full_messages
+            redirect_to new_user_path
+        end 
     end
 
     def destroy
@@ -55,7 +56,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:name, :avatar, :gender)
+        params.require(:user).permit(:name, :avatar, :gender, :email, :password_digest)
     end
 
 end

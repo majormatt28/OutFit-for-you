@@ -8,5 +8,11 @@
 <br>
 <h3><%= @user.gender.upcase%></h3>
 
+<h3>My Outfits</h3>
+    <% @user.outfits.each do |outfit| %>
+      <p><%= outfit.name %></p>
+      <hr>
+    <% end %>
+
 <%= button_to "Delete User Profile?", user_path(@user), method: :delete %>
-  <%= link_to "Main Page", users_path %>
+<%= link_to "Main Page", users_path %>
