@@ -1,7 +1,7 @@
 class ClosetsController < ApplicationController
     def index
-        @closets = Closet.all
-        byebug
+        @my_clothes = @current_user.clothings
+        #byebug
     end
 
     def show

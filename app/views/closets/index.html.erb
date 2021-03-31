@@ -1,7 +1,7 @@
 <h1>Closet index</h1>
 
-<% @closets.clothings.each do |closet| %>
-    <%= closet%>
+<% @my_clothes.each do |clothing| %>
+    <%= link_to clothing.name, clothing_path(clothing) %>
 <% end %>
 
-<p><%= link_to "show", closet_path(@closets.ids) %></p>
+<p><%= link_to "Profile Page", user_path(@current_user) %></p>
