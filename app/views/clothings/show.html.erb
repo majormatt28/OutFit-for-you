@@ -5,5 +5,9 @@
 <h2><%= @clothing.name%></h2>
 <br>
 <h3><%= @clothing.description%></h3>
+<br>
+<h3><%= @clothing.category%></h3>
+
 
 <%= link_to "Main Page", clothings_path %>
+<p><%= link_to "My Closet", closets_path(@current_user) %></p>
