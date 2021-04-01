@@ -1,6 +1,6 @@
 <h1>Clothing Show Page</h1>
 
-<img src="<%= @clothing.img_url %>" alt="<%= @clothing.name %>">
+<%= image_tag @clothing.img_url %>
 <br>
 <h2><%= @clothing.name%></h2>
 <br>
@@ -10,13 +10,13 @@
 <br>
 <h3><%= @clothing.gender %></h3>
 
+<%# if @current_user.logged_in? %>
 <% if @clothing.closets.exists?  %>
     <p>You Already Own This!</p>
     <% else %>
-
     <%# have a form that sends back user_id & clothing_id %>
     <%# sends to coleset controler and create  %>
-    <%= form_tag '/closets'  do %>
+    <%= form_tag '/closets' do %>
         <%= hidden_field_tag  :user_id, @current_user.id %>
         <%= hidden_field_tag :clothing_id, @clothing.id %>
         <%= submit_tag "Add to Closet" %>
