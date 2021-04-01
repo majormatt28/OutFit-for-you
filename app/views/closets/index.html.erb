@@ -1,7 +1,11 @@
+<p><%= link_to "Go Shopping", clothings_path %></p>
+<p><%= link_to "Profile Page", user_path(@current_user) %></p>
+
 <h1>Closet index</h1>
 
 <% @my_clothes.each do |clothing| %>
     <li><%= link_to clothing.name, clothing_path(clothing) %></li>
 <% end %>
 
-<p><%= link_to "Profile Page", user_path(@current_user) %></p>
+<%# link_to "Create a Fit!", new_outfit_clothing_path(@outfit) %>
+

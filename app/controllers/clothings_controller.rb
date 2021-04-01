@@ -10,6 +10,7 @@ class ClothingsController < ApplicationController
 
     def show
         @clothing = Clothing.find(params[:id])
+        #byebug
     end
 
 end

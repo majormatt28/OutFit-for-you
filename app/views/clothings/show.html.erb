@@ -1,3 +1,6 @@
+<p><%= link_to "My Closet", closets_path(@current_user) %></p>
+<%= link_to "Go Shopping", clothings_path %>
+
 <h1>Clothing Show Page</h1>
 
 <%= image_tag @clothing.img_url %>
@@ -11,7 +14,7 @@
 <h3><%= @clothing.gender %></h3>
 
 <%# if @current_user.logged_in? %>
-<% if @clothing.closets.exists?  %>
+<% if @current_user.clothings.find_by(id: @clothing.id)  %>
     <p>You Already Own This!</p>
     <% else %>
     <%# have a form that sends back user_id & clothing_id %>
@@ -24,5 +27,4 @@
 <% end %>
 
 
-<%= link_to "Main Page", clothings_path %>
-<p><%= link_to "My Closet", closets_path(@current_user) %></p>
+
