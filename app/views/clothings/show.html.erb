@@ -10,13 +10,18 @@
 <br>
 <h3><%= @clothing.gender %></h3>
 
-<%# if @clothing.closets.exists?  %>
-    <%# flash[:notice] = "That's already in your closet!" %>
-    <%# render clothing_path %>
-    <%# else %>
-    <%# @current_user.closets.push(@clothing) %>
-    <%# flash[:notice] = "Added to your closet!" %>
-<%# end %>
+<% if @clothing.closets.exists?  %>
+    <p>You Already Own This!</p>
+    <% else %>
+
+    <%# have a form that sends back user_id & clothing_id %>
+    <%# sends to coleset controler and create  %>
+    <%= form_tag '/closets'  do %>
+        <%= hidden_field_tag  :user_id, @current_user.id %>
+        <%= hidden_field_tag :clothing_id, @clothing.id %>
+        <%= submit_tag "Add to Closet" %>
+    <% end %>
+<% end %>
 
 
 <%= link_to "Main Page", clothings_path %>

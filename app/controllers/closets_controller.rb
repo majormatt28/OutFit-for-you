@@ -8,4 +8,7 @@ class ClosetsController < ApplicationController
         # byebug
         # @closet = Closet.find(params[:id])
     end
+
+    
+
 end

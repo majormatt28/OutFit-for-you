@@ -1,7 +1,7 @@
 <h1>Clothing Index Page</h1>
 
 <% @clothings.each do |clothing|%>
-<img src="<%= clothing.img_url %>" alt="<%= clothing.name %>"><br>
+<%= image_tag clothing.img_url %><br>
 <li><%= link_to clothing.name, clothing_path(clothing)%>
 <br>
 <%end%>

@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
         # find a user based on email
         user = User.find_by(email: params[:session][:email])
         # byebug
-    #validate that user based on their password
+        #validate that user based on their password
         if user && user.authenticate(params[:session][:password])
-      #set a cookie 
+        #set a cookie 
             cookies[:user_id] = user.id
             redirect_to user_path(user)
         else
