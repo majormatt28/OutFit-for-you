@@ -1,6 +1,11 @@
 class ClothingsController < ApplicationController
     def index
-        @clothings = Clothing.all
+        if params[:sort] == 'gender'
+            @clothings = Clothing.order(:gender) 
+            # set instance variable to a list ordered by 'name'
+          else
+            @clothings = Clothing.all
+        end
     end
 
     def show

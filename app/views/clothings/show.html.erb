@@ -7,6 +7,16 @@
 <h3><%= @clothing.description%></h3>
 <br>
 <h3><%= @clothing.category%></h3>
+<br>
+<h3><%= @clothing.gender %></h3>
+
+<%# if @clothing.closets.exists?  %>
+    <%# flash[:notice] = "That's already in your closet!" %>
+    <%# render clothing_path %>
+    <%# else %>
+    <%# @current_user.closets.push(@clothing) %>
+    <%# flash[:notice] = "Added to your closet!" %>
+<%# end %>
 
 
 <%= link_to "Main Page", clothings_path %>
