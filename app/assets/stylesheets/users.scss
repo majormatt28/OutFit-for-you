@@ -1,3 +1,27 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#navbar {
+    list-style-type: none;
+    margin: 0 0 0 35px;
+    padding: 0;
+    width: 150px;
+    background-color: rgba(89, 4, 30, 0.9);
+    height: 175px;
+}
+  
+  ul#navbar li a {
+    display: block;
+    color: rgba(255, 180, 0, 0.9);
+    padding: 8px 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  ul#navbar li a:hover {
+    background-color: gainsboro;
+    color: white;
+  }
+  
+

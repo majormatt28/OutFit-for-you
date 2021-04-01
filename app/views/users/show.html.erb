@@ -1,10 +1,10 @@
-<p><%= link_to "My Closet", closets_path %></p>
-<p><%= link_to "Go Shopping", clothings_path %>
-<p><%# link_to "Main Page", users_path %></p>
-<p><%= link_to "Edit Profile", edit_user_path %></p>
+<ul id="navbar">
+  <li><a><%= link_to "My Closet", closets_path %></a></li>
+  <li><a><%= link_to "Go Shopping", clothings_path %></a></li>
+  <li><a><%= link_to "Edit Profile", edit_user_path %></a></li>
+</ul>
 
-
-<h1>User Show Page</h1>
+<h1>My Profile</h1>
 
 <% if flash[:messages]%>
     <%= flash[:messages] %>
@@ -25,5 +25,5 @@
     <% end %>
 
 
-<p><%= button_to "Delete User Profile?", user_path(@user), method: :delete %></p>
+<p><%= button_to "Delete Your Profile?", user_path(@user), method: :delete %></p>
 
