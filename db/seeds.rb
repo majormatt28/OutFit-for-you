@@ -35,7 +35,9 @@ Clothing.create(name: "Black T-Shirt", img_url: "Mens - Black Tee.png" , descrip
 Clothing.create(name: "Coat", img_url: "Mens - Blue Bubble Coat.jpg" , description: "Blue bubble coat made of 100% down feathers.", category: "Shirt", gender: "M")
 Clothing.create(name: "Winter Boots", img_url: "Mens - Brown Boots.jpg" , description: "Brown winter boots made from 100% Italian leather.", category: "Shoe", gender: "M")
 Clothing.create(name: "Dress Boots", img_url: "Mens - Brown Dress Shoes.jpg" , description: "Brown dress boot made of 100% Italian leather.", category: "Shoe", gender: "M")
+Clothing.create(name: "Black Hoodie", img_url: "Mens - Black Hoodie.png" , description: "Black long sleeve hoodie made of 100% cotton and fleece lined. ", category: "Shirt", gender: "M")
 Clothing.create(name: "Chinos", img_url: "Mens - Chinos.jpg" , description: "Chinos made to last while maintaining superior comfort.", category: "Pant", gender: "M")
+Clothing.create(name: "Grey Sweatpants", img_url: "Mens - Sweatpants.jpeg" , description: "Grey comfy sweats with fleece lining for an easy day at home.", category: "Pant", gender: "M")
 Clothing.create(name: "Blue Jeans", img_url: "Mens - Dark Blue Jeans.jpg" , description: "Dark blue 5 pocket boot leg jeans.", category: "Pant", gender: "M")
 Clothing.create(name: "Fancy Watch", img_url: "Mens - Fancy Watch.jpg" , description: "30mm watch with Gold and Platinum links.", category: "Accessory", gender: "M")
 Clothing.create(name: "Green Sweater", img_url: "Mens - Green Crew Neck Sweatshirt.jpg" , description: "100% Cashmere sweater", category: "Shirt", gender: "M")
@@ -74,7 +76,7 @@ Clothing.create(name: "White Sunglasses", img_url: "Womens - White Sunglasses wi
 end
 
 5.times do 
-    Outfit.create(name: rand(1..5), user_id: User.all.sample.id)
+    Outfit.create(name: Faker::Games::Zelda.character, user_id: User.all.sample.id)
 end
 
 5.times do 

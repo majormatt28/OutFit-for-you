@@ -37,6 +37,10 @@
     align-items: center;
     grid-area: 2 / 2 / 6 / 6;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
   }
 
   div.closet-card {

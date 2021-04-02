@@ -9,12 +9,12 @@
     </div>
 
 
-    <div class="div7">
+    <div class="div7s">
         <h1 class="closet">Outfit <%= @outfit.name %></h1>
         <hr>
     </div>
 
-<div class="div8">
+<div class="div8s">
       <div class="outfit-card">
 <% @outfit.outfit_clothings.map do |outfit| %>
     <p><%= outfit.clothing.category %> : <%= image_tag outfit.clothing.img_url %></p>
@@ -24,6 +24,6 @@
 
 
 <div class="div5">
-      <a class="delete"><%= button_to "Delete This Fit?", user_path(@current_user), method: :delete %></a>
+      <a class="delete"><%= button_to "Delete This Fit?", outfit_path(@outfit), method: :delete %></a>
     </div>
 </div>

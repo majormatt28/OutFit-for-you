@@ -35,7 +35,7 @@ class OutfitsController < ApplicationController
 
         @outfit.delete
 
-        redirect_to outfits_path
+        redirect_to user_path(@current_user)
     end
 
 
