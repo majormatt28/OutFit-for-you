@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
         @user.delete
 
-        redirect_to users_path
+        redirect_to new_login_path
     end
 
     def edit
@@ -47,9 +47,9 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-
+        
         @user.update(user_params)
-
+        # byebug
         redirect_to user_path(@user)
     end
 
