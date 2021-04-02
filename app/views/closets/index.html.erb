@@ -1,11 +1,26 @@
-<p><%= link_to "Go Shopping", clothings_path %></p>
-<p><%= link_to "Profile Page", user_path(@current_user) %></p>
+<div class="closet-container">
+    <div class="closet-parent">
+        <div class="div6">
+            <ul id="navbar">
+                <li><a><%= link_to "Go Shopping", clothings_path %></a></li>
+                <li><a><%= link_to "My Profile", user_path(@current_user) %></a></li>
+            </ul>
+        </div>
 
-<h1>Closet index</h1>
 
-<% @my_clothes.each do |clothing| %>
-    <li><%= link_to clothing.name, clothing_path(clothing) %></li>
-<% end %>
+        <div class="div7">
+            <h1 class="closet">My Closet</h1>
+            <hr>
+        </div>
 
+
+        <div class="div8"> 
+                <% @my_clothes.each do |clothing| %>
+                <div class="closet-card">
+                    <%= link_to clothing.name, clothing_path(clothing) %>
+                </div>
+                <% end %>
+        </div>
+    </div>
+</div>
 <%# link_to "Create a Fit!", new_outfit_clothing_path(@outfit) %>
-

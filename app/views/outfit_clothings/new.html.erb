@@ -1,16 +1,28 @@
-<h1>Pick Your Piece(s)</h1>
+<div class="container">
+  <div class="parent">
+    <div class="div1">
+        <ul id="navbar">
+            <li><a><%= link_to "Go Back", outfits_path %></li></a>
+        </ul>
+    </div>
 
-<%= form_tag "/outfit_clothings" do %>
-    <%= hidden_field_tag :outfit_id, @outfit.id %>
-    <p><strong><%= label_tag "Choose a Top: " %>
-    <%= collection_select("outfit_clothing[]", :clothing_id, @shirts, :id, :name, { include_blank: "Tops" }, { :class => "input-xlarge" } ) %></p>
-    <p><strong><%= label_tag "Choose a Bottom: " %>
-    <%= collection_select("outfit_clothing[]", :clothing_id, @pants, :id, :name, { include_blank: "Bottoms" }, { :class => "input-xlarge" } ) %></p>
-    <p><strong><%= label_tag "Choose an Accessory: " %>
-    <%= collection_select("outfit_clothing[]", :clothing_id, @accessories, :id, :name, { include_blank: "Accessories" }, { :class => "input-xlarge" } ) %></p>
-    <p><strong><%= label_tag "Choose a Shoe: " %>
-    <%= collection_select("outfit_clothing[]", :clothing_id, @shoes, :id, :name, { include_blank: "Shoes" }, { :class => "input-xlarge" } ) %></p>
-    <%= submit_tag "Add to Outfit" %>
-<% end %>
+    <div class="div7">
+        <h1 class="closet">Pick Your Piece(s)</h1>
+        <hr>
+    </div>
 
-<p><%= link_to "Go Back", outfits_path %>
+
+<div class='outfit-right'>
+    <%= form_tag "/outfit_clothings" do %>
+        <%= hidden_field_tag :outfit_id, @outfit.id %>
+        <strong><p><%= label_tag "Choose a Top: " %>
+        <%= collection_select("outfit_clothing[]", :clothing_id, @shirts, :id, :name, { include_blank: "--Tops--" }, { :class => "input-xlarge" } ) %></p>
+        <strong><p><%= label_tag "Choose a Bottom: " %>
+        <%= collection_select("outfit_clothing[]", :clothing_id, @pants, :id, :name, { include_blank: "--Bottoms--" }, { :class => "input-xlarge" } ) %></p>
+        <strong><p><%= label_tag "Choose an Accessory: " %>
+        <%= collection_select("outfit_clothing[]", :clothing_id, @accessories, :id, :name, { include_blank: "--Accessories--" }, { :class => "input-xlarge" } ) %></p>
+        <strong><p><%= label_tag "Choose a Shoe: " %>
+        <%= collection_select("outfit_clothing[]", :clothing_id, @shoes, :id, :name, { include_blank: "--Shoes--" }, { :class => "input-xlarge" } ) %></p>
+        <%= submit_tag "Add to Outfit" %>
+    <% end %>
+</div>
