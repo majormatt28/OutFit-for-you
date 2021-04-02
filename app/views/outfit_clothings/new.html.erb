@@ -2,7 +2,7 @@
   <div class="parent">
     <div class="div1">
         <ul id="navbar">
-            <li><a><%= link_to "Go Back", outfits_path %></li></a>
+            <li><a><%= link_to "Go Back", outfit_path(@outfit) %></li></a>
         </ul>
     </div>
 
@@ -12,7 +12,7 @@
     </div>
 
 
-<div class='outfit-right'>
+<div class="div8">
     <%= form_tag "/outfit_clothings" do %>
         <%= hidden_field_tag :outfit_id, @outfit.id %>
         <strong><p><%= label_tag "Choose a Top: " %>
