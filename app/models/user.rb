@@ -6,6 +6,7 @@ class User < ApplicationRecord
     has_one_attached :avatar
     has_secure_password 
 
-    # validates :password, length: { in: 6..20 }
-    validates :email, confirmation: true
+    validates :password, length: { minimum: 6 }
+    validates :email, presence: true
+    validates :name, presence: true
 end

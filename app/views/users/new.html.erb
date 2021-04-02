@@ -1,9 +1,6 @@
 
 <div class="form-container">
-  <% if flash[:messages] %>
-    <% flash[:messages]%>
-  <% end %>
-
+  
 <h1>Create an Account</h1>
 <div class='form-input'>
 <%= form_for @user do |f|%>
@@ -33,5 +30,11 @@
 
 <%= f.submit "Done" %>
 <%end%>
+
+<% if flash[:messages] %>
+    <% flash[:messages].each do |message|%>
+      <p style="color: red;"><%= message %>
+    <% end %>
+<% end %>
 
 </div>

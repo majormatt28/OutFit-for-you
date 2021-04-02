@@ -28,7 +28,7 @@ class UsersController < ApplicationController
             cookies[:user_id] = @user.id
             redirect_to @user
           else
-            flash.now[:messages] = @user.errors.full_messages[0]
+            flash[:messages] = @user.errors.full_messages
             redirect_to new_user_path
         end 
     end
