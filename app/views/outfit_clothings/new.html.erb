@@ -14,6 +14,7 @@
 
 <div class="div8">
     <%= form_tag "/outfit_clothings" do %>
+    <div class="welcome-card">
         <%= hidden_field_tag :outfit_id, @outfit.id %>
         <strong><p><%= label_tag "Choose a Top: " %>
         <%= collection_select("outfit_clothing[]", :clothing_id, @shirts, :id, :name, { include_blank: "--Tops--" }, { :class => "input-xlarge" } ) %></p>
@@ -25,4 +26,5 @@
         <%= collection_select("outfit_clothing[]", :clothing_id, @shoes, :id, :name, { include_blank: "--Shoes--" }, { :class => "input-xlarge" } ) %></p>
         <%= submit_tag "Add to Outfit" %>
     <% end %>
+    </div>
 </div>
