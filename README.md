@@ -1,9 +1,8 @@
 # (Out)Fit For You
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to your next (Out)Fit that will wow your friends and family! Put together a Fit that suits your desired need for whichever occasion.
 
-Things you may want to cover:
+To start up our application:
 
 * Ruby version
 
