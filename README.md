@@ -15,3 +15,7 @@ Welcome to your next (Out)Fit that will wow your friends and family! Put togethe
 https://medium.com/@anaharris/how-to-add-image-upload-functionality-to-your-rails-app-9f7fc3f3d042
 
 Greg Triple OG Dwyer
+
+# Creators:
+- Radiyah Abdus-Sabur
+- Mathew Newton
